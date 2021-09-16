@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Brainf {
+public class Interpreter {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("src/com/company/brainf/brainf.txt");
+        File file = new File(brainf.txt");
         Scanner reader = new Scanner(file);
         StringBuilder code = new StringBuilder();
         while (reader.hasNextLine())
