@@ -5,10 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Stack;
 
-public class Interpreter {
+public class Brainf {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File(brainf.txt");
+        File file = new File("src/com/company/brainf/brainf.txt");
         Scanner reader = new Scanner(file);
         StringBuilder code = new StringBuilder();
         while (reader.hasNextLine())
@@ -31,11 +32,29 @@ public class Interpreter {
 
     private static void interpret(ArrayList<String> headacheTokens) {
 
-        int[] memory=new int[30000];
+        int[] memory=new int[30_000];
         int pointer=0;
+        boolean isLooping=false;
+        Stack<Integer> loopStack=new Stack<>();
+        int innerLoops=0;
+
+        Scanner scanner=new Scanner(System.in);
 
         for (int i = 0; i < headacheTokens.size(); i++) {
-            switch (headacheTokens.get(i)){
+
+            String headacheToken = headacheTokens.get(i);
+
+            if (isLooping) {
+                if (headacheToken.equals("["))
+                    innerLoops++;
+                if (headacheToken.equals("]")) {
+                    if (innerLoops == 0)
+                        isLooping = false;
+                    else innerLoops--;
+                }
+            }
+
+            switch (headacheToken) {
                 case "+":
                     memory[pointer]++;
                     break;
@@ -47,23 +66,28 @@ public class Interpreter {
                     break;
                 case "<":
                     pointer--;
-                    if(pointer<0)
+                    if (pointer < 0)
                         throw new IllegalStateException("Pointer value less than 0 is not possible");
                     break;
                 case ",":
-                    memory[pointer]=new Scanner(System.in).nextInt();
+                    memory[pointer] =scanner.nextInt();
                     break;
                 case ".":
-                    System.out.print((char)memory[pointer]);
+                    System.out.print(memory[pointer]);
                     break;
                 case "[":
+                    if (memory[pointer] == 0)
+                        isLooping = true;
+                    else
+                        loopStack.push(i);
                     break;
                 case "]":
+                        if (memory[pointer]!=0)
+                            i=loopStack.peek();
+                        else
+                            loopStack.pop();
                     break;
             }
         }
-    }
-    private static void exec(char command){
-
     }
 }
