@@ -1,4 +1,4 @@
-package com.company.brainf;
+// Java version
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class Brainf {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("src/com/company/brainf/brainf.txt");
+        File file = new File("brainf.txt");
         Scanner reader = new Scanner(file);
         StringBuilder code = new StringBuilder();
         while (reader.hasNextLine())
