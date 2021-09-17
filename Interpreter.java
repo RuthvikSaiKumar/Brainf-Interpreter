@@ -70,10 +70,10 @@ public class Brainf {
                         throw new IllegalStateException("Pointer value less than 0 is not possible");
                     break;
                 case ",":
-                    memory[pointer] =scanner.nextInt();
+                    memory[pointer] =(int)(scanner.next().charAt(0));
                     break;
                 case ".":
-                    System.out.print(memory[pointer]);
+                    System.out.print((char)(memory[pointer]));
                     break;
                 case "[":
                     if (memory[pointer] == 0)
