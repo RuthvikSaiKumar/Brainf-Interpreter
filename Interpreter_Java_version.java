@@ -42,7 +42,7 @@ public class Brainf {
 
         for (int i = 0; i < brainfTokens.size(); i++) {
 
-            String brainfToken = brsinfTokens.get(i);
+            String brainfToken = brainfTokens.get(i);
 
             if (isLooping) {
                 if (brainfToken.equals("["))
