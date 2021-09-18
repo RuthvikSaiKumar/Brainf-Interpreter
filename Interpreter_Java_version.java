@@ -30,7 +30,7 @@ public class Brainf {
         interpret(tokens);
     }
 
-    private static void interpret(ArrayList<String> headacheTokens) {
+    private static void interpret(ArrayList<String> brainfTokens) {
 
         int[] memory=new int[30_000];
         int pointer=0;
@@ -40,14 +40,14 @@ public class Brainf {
 
         Scanner scanner=new Scanner(System.in);
 
-        for (int i = 0; i < headacheTokens.size(); i++) {
+        for (int i = 0; i < brainfTokens.size(); i++) {
 
-            String headacheToken = headacheTokens.get(i);
+            String brainfToken = brsinfTokens.get(i);
 
             if (isLooping) {
-                if (headacheToken.equals("["))
+                if (brainfToken.equals("["))
                     innerLoops++;
-                if (headacheToken.equals("]")) {
+                if (brainfToken.equals("]")) {
                     if (innerLoops == 0)
                         isLooping = false;
                     else innerLoops--;
@@ -55,7 +55,7 @@ public class Brainf {
                 continue;
             }
 
-            switch (headacheToken) {
+            switch (brainfToken) {
                 case "+":
                     memory[pointer]++;
                     break;
