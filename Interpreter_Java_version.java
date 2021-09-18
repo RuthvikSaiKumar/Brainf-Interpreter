@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Brainf {
+public class Interpreter_Java_version {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("brainf.txt");
         Scanner reader = new Scanner(file);
