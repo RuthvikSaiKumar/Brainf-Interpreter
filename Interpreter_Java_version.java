@@ -52,6 +52,7 @@ public class Brainf {
                         isLooping = false;
                     else innerLoops--;
                 }
+                continue;
             }
 
             switch (headacheToken) {
