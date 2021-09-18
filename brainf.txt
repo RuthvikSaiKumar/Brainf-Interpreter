@@ -1,4 +1,4 @@
-Program to calculate 19 x 5
+Program to display character 'a'
 +++++ +++++ +++++ ++++
 [
     >+++++
@@ -8,4 +8,4 @@ Program to calculate 19 x 5
     ]
     <-
 ]
->>.
+>>++.
