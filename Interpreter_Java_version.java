@@ -71,7 +71,7 @@ public class Interpreter_Java_version {
                         throw new IllegalStateException("Pointer value less than 0 is not allowed");
                     break;
                 case ",":
-                    memory[pointer] =(scanner.next().charAt(0));
+                    memory[pointer] =(int)(scanner.next().charAt(0));
                     break;
                 case ".":
                     System.out.print((char)(memory[pointer]));
