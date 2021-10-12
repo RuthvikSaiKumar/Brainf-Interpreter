@@ -1,0 +1,1 @@
+# Anyone who wants to contribute for completing in different languages can write my same program in any language you want and ask for a pull request. After i reviewed the code i will merge it. Also leave your GitHub account name so that later i can add you to the contributors.
