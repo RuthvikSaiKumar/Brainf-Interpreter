@@ -59,7 +59,7 @@ void interpret(string code){
 
 int main(){
     string code;
-    ifstream file("brainf.bf");
+    ifstream file("brainf.txt");
     if(file.is_open()){
         string line;
         while(getline(file, line))
